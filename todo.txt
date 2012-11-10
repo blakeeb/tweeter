@@ -2,9 +2,6 @@
 # MVP
 
 A user can...
- - sign up
- - log in
- - Post a tweet
  - follow other users
  - see a feed of tweets
  - search all tweets
@@ -13,7 +10,11 @@ A user can...
  - Gravitars, image uploads, live streaming video, etc.
 
 
-
+# DONE
+ - sign up
+ - log in
+ - Post a tweet
+ - Tweet should have user id associated
 
 
 Amticipated Models
