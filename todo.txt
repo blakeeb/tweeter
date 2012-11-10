@@ -17,6 +17,7 @@ A user can...
  - log in
  - Post a tweet
  - Tweet should have user id associated
+ - have a profile list of their tweets
 
 
 Amticipated Models
