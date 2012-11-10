@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :tweets, :order => 'created_at DESC'
-  has_and_belongs_to_many :followed, :class_name => 'User', :foreign_key => 'followed_user_id'
+  has_and_belongs_to_many :followed, :class_name => 'User', :foreign_key => 'user_id', :association_foreign_key => 'followed_user_id'
 #  has_and_belongs_to_many :following, :class_name => 'User', :foreign_key => 'user_id'
   
   # Include default devise modules. Others available are:
@@ -21,13 +21,9 @@ class User < ActiveRecord::Base
     FROM 
       tweets t
     WHERE
-     t.user_id IN (SELECT followed_user_id FROM users_followers WHERE user_id = #{id})
+     t.user_id IN (SELECT followed_user_id FROM users_users WHERE user_id = #{id})
     SQL
     )
-      
-    # followers.inject([]) do |arr, user|
-    #   arr += user.tweets 
-    # end
   end
   
   def news_feed

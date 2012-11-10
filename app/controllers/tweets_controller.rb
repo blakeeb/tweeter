@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 #    @tweets = Tweet.all
     @tweets = 
       if current_user
-        []
+        current_user.followeds_tweets
       else
         Tweet.limit(50).order('created_at DESC')
       end
