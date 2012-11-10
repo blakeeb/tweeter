@@ -3,5 +3,5 @@ Tweeter::Application.routes.draw do
 
   devise_for :users
 
- root :to => 'welcome#index'
+ root :to => 'tweets#index'
 end

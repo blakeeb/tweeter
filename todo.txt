@@ -1,5 +1,7 @@
 
 # MVP
+Anyone can...
+ - see all tweets
 
 A user can...
  - follow other users

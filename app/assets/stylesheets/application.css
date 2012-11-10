@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+/* As recommended by Twitter Bootstrap docs */
+body {
+  padding-top: 50px;
+}
