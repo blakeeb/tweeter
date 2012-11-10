@@ -7,13 +7,13 @@
     <%= f.submit 'Tweet it!' %>
   <% end %>
 <% end %>
-
-<% if current_user.is_following? @user %>
-  <%= button_to "Unfollow #{@user.nickname}", user_follow_path(@user), :method => :delete %>
-<% else %>
-  <%= button_to "Follow #{@user.nickname}", user_follow_path(@user), :method => :post %>
+<% unless @current_user == @user %>
+  <% if current_user.is_following? @user %>
+    <%= button_to "Unfollow #{@user.nickname}", user_follow_path(@user), :method => :delete %>
+  <% else %>
+    <%= button_to "Follow #{@user.nickname}", user_follow_path(@user), :method => :post %>
+  <% end %>
 <% end %>
-
 <% @user.tweets.each do |tweet| %>
 <p>
   <%= tweet.body %>
