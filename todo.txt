@@ -1,0 +1,36 @@
+
+# MVP
+
+A user can...
+ - sign up
+ - log in
+ - Post a tweet
+ - follow other users
+ - see a feed of tweets
+ - search all tweets
+
+# Backburner
+ - Gravitars, image uploads, live streaming video, etc.
+
+
+
+
+
+Amticipated Models
+
+User - devise
+UserFollowers
+ * user_id
+ * follower_id
+Tweet 
+ * user_id
+ * timestamps
+ * text
+
+
+
+
+
+
+
+

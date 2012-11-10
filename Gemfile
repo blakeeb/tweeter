@@ -7,6 +7,14 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'devise'
+
+gem 'twitter-bootstrap-rails'
+gem "less-rails"
+gem 'execjs'
+gem 'therubyracer'
+
+gem 'rspec-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
