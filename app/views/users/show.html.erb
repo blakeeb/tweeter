@@ -1,3 +1,11 @@
 <h1><%= @user.nickname %>'s Feed</h1>
 
-(tweets)
+<% @user.tweets.each do |tweet| %>
+<p>
+  <%= tweet.body %>
+  <br>
+  -
+  <%= link_to tweet.user.nickname, tweet.user %>
+</p>
+<% end %>
+
