@@ -2,7 +2,13 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+#    @tweets = Tweet.all
+    @tweets = 
+      if current_user
+        []
+      else
+        Tweet.limit(50).order('created_at DESC')
+      end
 
     respond_to do |format|
       format.html # index.html.erb

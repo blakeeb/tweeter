@@ -1,9 +1,8 @@
 class UserHasFollowers < ActiveRecord::Migration
   def change
-    create_table :users_followers do |t|
-      t.references :user
-      t.references :followed_user, :class_name => 'User'
-      t.timestamps
+    create_table :users_users do |t|
+      t.integer :user_id
+      t.integer :followed_user_id
     end
   end
 end

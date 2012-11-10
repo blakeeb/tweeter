@@ -39,11 +39,9 @@ ActiveRecord::Schema.define(:version => 20121110223132) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-  create_table "users_followers", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "followed_user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+  create_table "users_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "followed_user_id"
   end
 
 end
