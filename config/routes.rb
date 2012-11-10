@@ -1,8 +1,10 @@
 Tweeter::Application.routes.draw do
+  devise_for :users
+  
   resources :tweets
   resources :users
   
-  devise_for :users
+
 
   root :to => 'tweets#index'
 end

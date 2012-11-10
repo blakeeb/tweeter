@@ -42,11 +42,11 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(params[:tweet])
 
-    @tweet.user_id = current_user.id
+    @tweet.user = current_user
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        format.html { redirect_to @tweet.user, notice: 'Tweet to Tweeter has been TWEETED!' }
         format.json { render json: @tweet, status: :created, location: @tweet }
       else
         format.html { render action: "new" }
@@ -57,19 +57,19 @@ class TweetsController < ApplicationController
 
   # PUT /tweets/1
   # PUT /tweets/1.json
-  def update
-    @tweet = Tweet.find(params[:id])
-
-    respond_to do |format|
-      if @tweet.update_attributes(params[:tweet])
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   @tweet = Tweet.find(params[:id])
+  # 
+  #   respond_to do |format|
+  #     if @tweet.update_attributes(params[:tweet])
+  #       format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: "edit" }
+  #       format.json { render json: @tweet.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /tweets/1
   # DELETE /tweets/1.json

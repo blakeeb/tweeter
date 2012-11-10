@@ -1,5 +1,13 @@
 <h1><%= @user.nickname %>'s Feed</h1>
 
+<% if @current_user == @user %>
+  <%= form_for @new_tweet do |f| %>
+    <%= f.text_area :body %>
+    
+    <%= f.submit 'Post' %>
+  <% end %>
+<% end %>
+
 <% @user.tweets.each do |tweet| %>
 <p>
   <%= tweet.body %>
